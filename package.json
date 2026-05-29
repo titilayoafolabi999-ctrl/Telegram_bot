@@ -1,0 +1,32 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "A productive Telegram bot built with Node.js featuring gamification, news aggregation, and lightning-fast utilities",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "gamification",
+    "news",
+    "nodejs"
+  ],
+  "author": "titilayoafolabi999",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.12.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "redis": "^4.6.11",
+    "mongoose": "^7.5.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0"
+  }
+}

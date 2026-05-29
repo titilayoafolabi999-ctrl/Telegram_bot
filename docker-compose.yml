@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: telegram_bot_mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: telegram_bot_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  bot:
+    build: .
+    container_name: telegram_bot_app
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/telegram_bot?authSource=admin
+      REDIS_URL: redis://redis:6379
+      NEWS_API_KEY: ${NEWS_API_KEY}
+      NODE_ENV: production
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+  redis_data:
