@@ -5,12 +5,14 @@ module.exports = {
     token: process.env.TELEGRAM_BOT_TOKEN,
     username: process.env.BOT_USERNAME,
   },
-  database: {
-    mongoUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/telegram_bot',
-    redisUrl: process.env.REDIS_URL || 'redis://localhost:6379',
+  googleDrive: {
+    serviceAccountEmail: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    privateKey: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    folderId: process.env.GOOGLE_DRIVE_FOLDER_ID,
   },
-  api: {
-    newsApiKey: process.env.NEWS_API_KEY,
+  groq: {
+    apiKey: process.env.GROQ_API_KEY,
   },
-  environment: process.env.NODE_ENV || 'development',
+  environment: process.env.NODE_ENV || 'production',
+  port: process.env.PORT || 3000,
 };

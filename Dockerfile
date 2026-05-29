@@ -11,7 +11,7 @@ RUN npm ci --only=production
 # Copy application code
 COPY . .
 
-# Expose port (if needed for future expansion)
+# Expose port
 EXPOSE 3000
 
 # Start bot

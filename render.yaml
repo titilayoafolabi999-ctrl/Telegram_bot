@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: telegram-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: TELEGRAM_BOT_TOKEN
+        fromEnv: TELEGRAM_BOT_TOKEN
+      - key: GROQ_API_KEY
+        fromEnv: GROQ_API_KEY
+      - key: GOOGLE_SERVICE_ACCOUNT_EMAIL
+        fromEnv: GOOGLE_SERVICE_ACCOUNT_EMAIL
+      - key: GOOGLE_PRIVATE_KEY
+        fromEnv: GOOGLE_PRIVATE_KEY
+      - key: GOOGLE_DRIVE_FOLDER_ID
+        fromEnv: GOOGLE_DRIVE_FOLDER_ID

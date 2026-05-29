@@ -2,34 +2,34 @@ const helpCommand = async (ctx) => {
   const helpMessage = `
 🤖 *Available Commands*
 
-*Gamification:*
-/profile - View your profile and stats
-/leaderboard - See top 10 players
-/daily - Complete daily challenge
-/achievements - View your achievements
+*AI & Chat:*
+/chat <message> - Chat with AI
+/translate <lang> <text> - Translate text
 
-*News:*
-/news - Get trending news
-/search <topic> - Search for news on a topic
-/trending - See trending topics
+*Utilities:*
+/joke - Get a random joke
+/country <name> - Get country information
+/exchange <from> <to> <amount> - Convert currency
 
-*Other:*
+*Account:*
+/profile - View your profile
 /start - Show welcome message
 /help - Show this help message
 
-*How it Works:*
-✨ Earn XP by using commands
-🎮 Level up and unlock achievements
-📰 Read news and stay informed
-🏆 Compete on the leaderboard
+*Examples:*
+💬 /chat What is the capital of France?
+🌐 /translate Spanish Hello world
+😄 /joke
+🌍 /country Japan
+💱 /exchange USD EUR 100
 
 *Tips:*
-• Complete daily challenges for bonus XP
-• Search for topics you're interested in
-• Check the leaderboard to see where you stand
-• Unlock achievements to boost your score
+• Chat history is saved automatically
+• Use /translate for any language
+• Get real-time exchange rates
+• Learn interesting facts about countries
 
-Questions? Feel free to reach out! 💬
+Need more help? Just ask! 🚀
   `;
 
   await ctx.reply(helpMessage, { parse_mode: 'Markdown' });
